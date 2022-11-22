@@ -54,4 +54,8 @@ public class ReporteController {
         return rService.listarId(id);
     }
 
+    @GetMapping("/reportetomado")
+    public List<Reporte> reporteTomado(){
+        return rService.reporteTomado();
+    }
 }
