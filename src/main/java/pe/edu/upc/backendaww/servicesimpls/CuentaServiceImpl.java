@@ -5,10 +5,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import pe.edu.upc.backendaww.entities.Cuenta;
 import pe.edu.upc.backendaww.entities.Distrito;
+import pe.edu.upc.backendaww.entities.Respuesta;
 import pe.edu.upc.backendaww.repositories.ICuentaRepository;
 import pe.edu.upc.backendaww.repositories.IDistritoRepository;
 import pe.edu.upc.backendaww.servicesinterfaces.ICuentaService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -52,5 +54,17 @@ public class CuentaServiceImpl implements ICuentaService {
 
     @Override
     public List<Cuenta> buscarCuenta(String nombreCuenta) { return cR.buscarCuenta(nombreCuenta); }
+
+    @Override
+    public List<Respuesta> reporteMasObjetos() {
+        List<Respuesta>lista=new ArrayList<>();
+        cR.reporteMasCuentaObjetos().forEach(y->{
+            Respuesta r=new Respuesta();
+            r.setNombre_cuenta(y[0]);
+            r.setCantidad(y[1]);
+            lista.add(r);
+        });
+        return lista;
+    }
 
 }

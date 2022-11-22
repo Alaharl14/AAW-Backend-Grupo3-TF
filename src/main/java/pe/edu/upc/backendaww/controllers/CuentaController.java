@@ -3,6 +3,7 @@ package pe.edu.upc.backendaww.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.backendaww.entities.Cuenta;
+import pe.edu.upc.backendaww.entities.Respuesta;
 import pe.edu.upc.backendaww.servicesinterfaces.ICuentaService;
 
 import java.util.List;
@@ -51,5 +52,11 @@ public class CuentaController {
     @GetMapping("/{id}")
     public Optional<Cuenta> listarId(@PathVariable("id") Integer id) {
         return cService.listarId(id);
+    }
+
+    @GetMapping("/reportes")
+    public List<Respuesta> reporteMas(){
+        return cService.reporteMasObjetos();
+
     }
 }

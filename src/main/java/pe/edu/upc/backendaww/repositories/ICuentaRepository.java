@@ -15,4 +15,7 @@ public interface ICuentaRepository extends JpaRepository<Cuenta,Integer> {
 
     @Query("from Cuenta c where c.nombreCuenta like %:nombreCuenta%")
     List<Cuenta> buscarCuenta(@Param("nombreCuenta") String nombreCuenta);
+
+    @Query(value = "select cu.nombre_cuenta, count(obj.id_objeto) as cantidad from cuenta cu inner join objeto obj on cu.id_cuenta = obj.id_cuenta group by cu.nombre_cuenta having count(obj.id_objeto)>3",nativeQuery = true)
+    List<String[]>reporteMasCuentaObjetos();
 }

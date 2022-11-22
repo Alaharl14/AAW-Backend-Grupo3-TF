@@ -1,6 +1,7 @@
 package pe.edu.upc.backendaww.servicesinterfaces;
 
 import pe.edu.upc.backendaww.entities.Cuenta;
+import pe.edu.upc.backendaww.entities.Respuesta;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,4 +16,6 @@ public interface ICuentaService {
     List<Cuenta> buscarDistrito(String nombreDistrito);
 
     List<Cuenta> buscarCuenta(String nombreCuenta);
+
+    List<Respuesta> reporteMasObjetos();
 }
