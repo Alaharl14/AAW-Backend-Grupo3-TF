@@ -58,4 +58,9 @@ public class ReporteController {
     public List<Reporte> reporteTomado(){
         return rService.reporteTomado();
     }
+
+    @GetMapping("/buscarultimosdias")
+    public List<Reporte> reportesUltimosdias(){
+        return rService.reportesUltimosdias();
+    }
 }

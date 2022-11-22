@@ -20,4 +20,7 @@ public interface IReporteService {
     List<Reporte> buscarReporte(String nombreReporte);
 
     List<Reporte> reporteTomado();
+
+    List<Reporte> reportesUltimosdias();
+
 }
