@@ -21,4 +21,6 @@ public interface IReporteRepository extends JpaRepository<Reporte,Integer> {
     List<Reporte> buscarReporte(@Param("nombreReporte") String nombreReporte);
     @Query(value = "select * from reporte r, estado_reporte er where r.id_estado_reporte=er.id_estado_reporte and (er.nombre_estado_reporte like 'Tomado')",nativeQuery = true)
     List<Reporte> reporteTomado();
+    @Query(value = "select * from reporte where fecha_reporte>'2022-11-08' and fecha_reporte<'2022-11-22'",nativeQuery = true)
+    List<Reporte> reportesUltimosdias();
 }

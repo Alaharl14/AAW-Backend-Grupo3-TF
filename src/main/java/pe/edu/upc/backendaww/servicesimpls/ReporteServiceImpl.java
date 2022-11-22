@@ -61,4 +61,9 @@ public class ReporteServiceImpl implements IReporteService {
     public List<Reporte> reporteTomado() {
         return rR.reporteTomado();
     }
+
+    @Override
+    public List<Reporte> reportesUltimosdias() {
+        return rR.reportesUltimosdias();
+    }
 }
