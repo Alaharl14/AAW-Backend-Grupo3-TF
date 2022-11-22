@@ -56,4 +56,9 @@ public class ReporteServiceImpl implements IReporteService {
     public List<Reporte> buscarReporte(String nombreReporte) {
         return rR.buscarReporte(nombreReporte);
     }
+
+    @Override
+    public List<Reporte> reporteTomado() {
+        return rR.reporteTomado();
+    }
 }

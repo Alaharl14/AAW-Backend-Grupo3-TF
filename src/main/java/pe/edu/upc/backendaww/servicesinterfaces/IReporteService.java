@@ -18,4 +18,6 @@ public interface IReporteService {
     List<Reporte> buscarEstadoReporte(String nombreEstadoObjeto);
 
     List<Reporte> buscarReporte(String nombreReporte);
+
+    List<Reporte> reporteTomado();
 }

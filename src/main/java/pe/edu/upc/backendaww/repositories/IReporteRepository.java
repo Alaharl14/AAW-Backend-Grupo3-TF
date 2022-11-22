@@ -19,4 +19,6 @@ public interface IReporteRepository extends JpaRepository<Reporte,Integer> {
 
     @Query("from Reporte r where r.nombreReporte like %:nombreReporte%")
     List<Reporte> buscarReporte(@Param("nombreReporte") String nombreReporte);
+    @Query(value = "select * from reporte r, estado_reporte er where r.id_estado_reporte=er.id_estado_reporte and (er.nombre_estado_reporte like 'Tomado')",nativeQuery = true)
+    List<Reporte> reporteTomado();
 }
